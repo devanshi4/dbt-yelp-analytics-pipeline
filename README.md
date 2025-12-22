@@ -16,7 +16,6 @@
 <p align="center">
   <em>DBT data lineage showing the complete transformation pipeline</em>
 </p>
-*Data lineage showing the complete transformation pipeline*
 
 A production-grade data transformation pipeline built with **DBT**, **PostgreSQL**, and **Python**. This project demonstrates end-to-end data engineering skills including data ingestion, transformation, testing, and documentation.
 
