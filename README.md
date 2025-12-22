@@ -9,8 +9,13 @@
 
 ## 🎥 Quick Demo
 
-![DBT Lineage Graph](Lineage_Graph.png)
-(https://via.placeholder.com/800x400?text=Add+Your+Lineage+Graph+Screenshot+Here)
+<p align="center">
+  <img src="Lineage_Graph.png" width="800"/>
+</p>
+
+<p align="center">
+  <em>DBT data lineage showing the complete transformation pipeline</em>
+</p>
 *Data lineage showing the complete transformation pipeline*
 
 A production-grade data transformation pipeline built with **DBT**, **PostgreSQL**, and **Python**. This project demonstrates end-to-end data engineering skills including data ingestion, transformation, testing, and documentation.
