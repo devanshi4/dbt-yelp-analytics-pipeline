@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: fct_product_performance
+    description: "Product-level performance metrics aggregated from reviews"
+    columns:
+      - name: product_id
+        description: "Unique product identifier"
+        tests:
+          - unique
+          - not_null
+          
+  - name: fct_user_activity
+    description: "User-level activity and behavior metrics"
+    columns:
+      - name: user_id
+        description: "Unique user identifier"
+        tests:
+          - unique
+          - not_null
+          
+  - name: dim_review_timeline
+    description: "Daily review trends by product"
+    columns:
+      - name: timeline_key
+        description: "Unique key for date-product combination"
+        tests:
+          - unique
+          - not_null

@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_reviews
+    description: "Cleaned and standardized Yelp reviews from raw source"
+    columns:
+      - name: product_id
+        description: "Business identifier"
+        tests:
+          - not_null
+          
+      - name: user_id
+        description: "User identifier"
+        tests:
+          - not_null
+          
+      - name: rating
+        description: "Star rating (1-5)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+              
+      - name: review_text
+        description: "Full review text"
+        tests:
+          - not_null
+          
+      - name: review_datetime
+        description: "Timestamp of review"
+        tests:
+          - not_null
+          
+      - name: sentiment
+        description: "Sentiment classification"
+        tests:
+          - accepted_values:
+              values: ['positive', 'neutral', 'negative']

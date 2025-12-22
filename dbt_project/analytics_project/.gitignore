@@ -1,0 +1,40 @@
+# DBT artifacts
+target/
+dbt_packages/
+logs/
+
+# Python
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Environment variables
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# DBT specific - DO NOT commit credentials
+profiles.yml
+.user.yml
+
+# Data files
+*.csv
+*.parquet
+*.json
+data/

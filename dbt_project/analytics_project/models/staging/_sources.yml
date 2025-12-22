@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data from HuggingFace loaded into PostgreSQL"
+    database: dbt_analytics
+    schema: public
+    tables:
+      - name: raw_reviews
+        description: "Raw Yelp review data"
+        columns:
+          - name: rating
+            description: "Star rating (1-5)"
+          - name: title
+            description: "Review title"
+          - name: text
+            description: "Full review text"
+          - name: product_id
+            description: "Business/product identifier"
+          - name: user_id
+            description: "User identifier"
+          - name: timestamp
+            description: "Unix timestamp of review"
+          - name: verified_purchase
+            description: "Whether purchase was verified"
+          - name: helpful_vote
+            description: "Number of helpful votes"
