@@ -33,8 +33,7 @@ Thumbs.db
 profiles.yml
 .user.yml
 
-# Data files
+# Data files (but keep SQL files!)
 *.csv
 *.parquet
-*.json
 data/
