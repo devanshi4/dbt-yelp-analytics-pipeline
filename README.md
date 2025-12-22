@@ -1,5 +1,17 @@
 # 🎯 Yelp Reviews Analytics Pipeline - DBT Project
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/devanshi4/dbt-yelp-analytics-pipeline)
+[![DBT](https://img.shields.io/badge/DBT-Transformation-orange)](https://www.getdbt.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)](https://www.postgresql.org/)
+[![Python](https://img.shields.io/badge/Python-3.9+-green)](https://www.python.org/)
+
+> 🚀 A production-grade analytics pipeline demonstrating modern data engineering practices with DBT, PostgreSQL, and Python.
+
+## 🎥 Quick Demo
+
+![DBT Lineage Graph](https://via.placeholder.com/800x400?text=Add+Your+Lineage+Graph+Screenshot+Here)
+*Data lineage showing the complete transformation pipeline*
+
 A production-grade data transformation pipeline built with **DBT**, **PostgreSQL**, and **Python**. This project demonstrates end-to-end data engineering skills including data ingestion, transformation, testing, and documentation.
 
 ## 📊 Project Overview
