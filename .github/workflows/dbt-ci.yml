@@ -1,0 +1,26 @@
+name: dbt CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: dbt_project/analytics_project
+    env:
+      POSTGRES_USER: ci
+      POSTGRES_PASSWORD: ci
+      DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_project/analytics_project
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install "dbt-postgres>=1.8,<2"
+      - run: cp profiles.example.yml profiles.yml
+      - name: Parse project (SQL, Jinja, refs, YAML)
+        run: dbt parse --no-partial-parse
