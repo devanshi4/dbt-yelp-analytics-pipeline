@@ -5,13 +5,14 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # ==========================================
-# CONFIGURATION - CHANGE THESE TO YOUR SETTINGS
+# CONFIGURATION - read from environment variables (see .env.example)
 # ==========================================
-DB_USER = 'dbt_user'          # Or 'postgres' if you didn't create dbt_user
-DB_PASSWORD = 'dbt_password123'  # Your PostgreSQL password
-DB_HOST = 'localhost'
-DB_PORT = '5432'
-DB_NAME = 'dbt_analytics'
+import os
+DB_USER = os.getenv('POSTGRES_USER', 'dbt_user')
+DB_PASSWORD = os.environ['POSTGRES_PASSWORD']  # required, never hardcode
+DB_HOST = os.getenv('POSTGRES_HOST', 'localhost')
+DB_PORT = os.getenv('POSTGRES_PORT', '5432')
+DB_NAME = os.getenv('POSTGRES_DB', 'dbt_analytics')
 
 # Create connection string
 connection_string = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
@@ -150,7 +151,8 @@ def standardize_columns(df, dataset_name):
             
     elif "Yelp" in dataset_name:
         # Yelp dataset columns
-        df = df.rename(columns={'stars': 'rating'})
+        # yelp_review_full has only `text` and `label` (0-4 = 1-5 stars)
+        df['rating'] = df['label'] + 1
         df['title'] = 'Yelp Review'
         df['product_id'] = 'BUSINESS_' + df.index.astype(str)
         df['user_id'] = 'USER_' + df.index.astype(str)
